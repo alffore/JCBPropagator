@@ -1,11 +1,9 @@
 package jcbpropagator;
 
 import java.awt.Toolkit;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.UnsupportedFlavorException;
+import java.awt.datatransfer.*;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 
 /**
  *
@@ -23,9 +21,7 @@ public class JCBPropagator {
         
         try {
             System.out.print(jcbp.readClipboard());
-        } catch (UnsupportedFlavorException ex) {
-            Logger.getLogger(JCBPropagator.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
+        } catch (UnsupportedFlavorException | IOException ex) {
             Logger.getLogger(JCBPropagator.class.getName()).log(Level.SEVERE, null, ex);
         }
        
