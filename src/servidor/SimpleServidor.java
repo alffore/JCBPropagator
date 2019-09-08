@@ -11,6 +11,8 @@ import java.io.IOException;
 /**
  *
  * @author alfonso
+ * @see https://www.codeproject.com/Tips/1040097/Create-a-Simple-Web-Server-in-Java-HTTP-Server
+ * @see https://stackoverflow.com/questions/3732109/simple-http-server-in-java-using-only-java-se-api
  */
 public class SimpleServidor {
 
@@ -19,11 +21,11 @@ public class SimpleServidor {
     public SimpleServidor(int puerto) {
         try {
             server = HttpServer.create(new InetSocketAddress(puerto), 0);
-            server.createContext("/envio", new EnvioHandler());
+            server.createContext("/in", new EnvioHandler());
             server.setExecutor(null);
             server.start();
         } catch (IOException ioex) {
-
+            System.err.println(ioex);
         }
     }
 }
