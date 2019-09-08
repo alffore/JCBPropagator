@@ -31,7 +31,7 @@ public class SimpleCliente {
     }
     
     /**
-     * Método para enviar mensaje a los clientes conectados 
+     * Método para enviar mensaje en forma asincrona a los clientes conectados 
      */
     public void eviaMensaje(){
         

@@ -21,7 +21,7 @@ public class SimpleServidor {
     public SimpleServidor(int puerto) {
         try {
             server = HttpServer.create(new InetSocketAddress(puerto), 0);
-            server.createContext("/in", new EnvioHandler());
+            server.createContext("/in", new ProcesaHandler());
             server.setExecutor(null);
             server.start();
         } catch (IOException ioex) {

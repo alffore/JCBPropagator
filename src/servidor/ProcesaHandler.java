@@ -9,11 +9,11 @@ import java.io.OutputStream;
  *
  * @author alfonso
  */
-public class EnvioHandler implements HttpHandler {
+public class ProcesaHandler implements HttpHandler {
 
     int id;
 
-    public EnvioHandler() {
+    public ProcesaHandler() {
         id = 0;
     }
 
