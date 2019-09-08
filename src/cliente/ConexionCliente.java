@@ -1,5 +1,5 @@
 
-package jcbpropagator;
+package cliente;
 
 /**
  *

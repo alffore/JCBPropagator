@@ -1,6 +1,8 @@
 
 package jcbpropagator;
 
+import cbm.ECB;
+
 /**
  *
  * @author alfonso
