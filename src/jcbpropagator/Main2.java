@@ -97,6 +97,8 @@ public class Main2 {
                 clientes++;
             }
             
+            mifr.close();
+            
             for(var c: alconex){
                 System.out.println(c);
             }

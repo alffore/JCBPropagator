@@ -15,7 +15,7 @@ import java.util.logging.*;
  *
  * @author alfonso
  */
-public class ECB implements FlavorListener{
+public class ECB implements ClipboardOwner, FlavorListener{
     
     Clipboard cb;
     
@@ -70,5 +70,11 @@ public class ECB implements FlavorListener{
      */
     private void recuperaObjetoCB(){
         
+    }
+
+    @Override
+    public void lostOwnership(Clipboard clipboard, Transferable contents) {
+        Logger.getLogger(ECB.class.getName()).log(Level.INFO, null, clipboard);
+        System.out.println("Se perdio la propiedad del CB");
     }
 }
