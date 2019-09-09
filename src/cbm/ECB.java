@@ -1,4 +1,6 @@
 // https://www.developer.com/java/data/how-to-code-java-clipboard-functionality.html
+// problema en macosx https://langui.sh/2010/11/14/pbpaste-pbcopy-in-mac-os-x-or-terminal-clipboard-fun/
+
 package cbm;
 
 import cliente.*;
@@ -26,7 +28,7 @@ public class ECB implements FlavorListener{
      * @param acc
      * @param almem 
      */
-    public ECB( ArrayList<ConexionCliente> acc,ArrayList<MemoriaC>almem){
+    public ECB(ArrayList<ConexionCliente> acc,ArrayList<MemoriaC>almem){
         
         this.acc=acc;
         this.almem = almem;
@@ -37,6 +39,8 @@ public class ECB implements FlavorListener{
         
         cb=Toolkit.getDefaultToolkit().getSystemClipboard();
         cb.addFlavorListener(this);
+        
+       
     }
 
     /**

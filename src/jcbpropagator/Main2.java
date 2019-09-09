@@ -7,6 +7,7 @@ package jcbpropagator;
 import cbm.ECB;
 import cbm.MemoriaC;
 import cliente.ConexionCliente;
+import cliente.SimpleCliente;
 import com.eclipsesource.json.Json;
 import com.eclipsesource.json.JsonArray;
 import com.eclipsesource.json.JsonValue;
@@ -52,16 +53,16 @@ public class Main2 {
         
         new ECB(alconex,almem);
         
-//        SimpleCliente sc = new SimpleCliente("http://127.0.0.1:8000/in");
-//        for(int i=0; i<100;i++){
-//                                    
-//                sc.eviaMensaje();
-//            try {
-//                Thread.sleep(1000);
-//            } catch (InterruptedException ex) {
-//                Logger.getLogger(Main2.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }
+        SimpleCliente sc = new SimpleCliente("http://127.0.0.1:8000/in");
+        for(int i=0; i<10000;i++){
+                                    
+                sc.eviaMensaje();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Main2.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
     }
     
