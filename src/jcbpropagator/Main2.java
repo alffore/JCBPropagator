@@ -99,9 +99,9 @@ public class Main2 {
             
             mifr.close();
             
-            for(var c: alconex){
+            alconex.forEach((c) -> {
                 System.out.println(c);
-            }
+            });
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main2.class.getName()).log(Level.SEVERE, null, ex);
