@@ -4,19 +4,15 @@ package jcbpropagator;
 
 
 
-import cbm.ECB;
+import cbm.ClipboardListener;
 import cbm.MemoriaC;
 import cliente.ConexionCliente;
 import cliente.SimpleCliente;
-import com.eclipsesource.json.Json;
-import com.eclipsesource.json.JsonArray;
-import com.eclipsesource.json.JsonValue;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import com.eclipsesource.json.*;
+import java.io.*;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.logging.*;
 import servidor.SimpleServidor;
 
 /**
@@ -51,7 +47,11 @@ public class Main2 {
         
         
         
-        new ECB(alconex,almem);
+        //new ECB(alconex,almem);
+        
+        ClipboardListener listener = new ClipboardListener();
+        listener.start();
+        
         
         SimpleCliente sc = new SimpleCliente("http://127.0.0.1:8000/in");
         for(int i=0; i<10000;i++){
@@ -67,12 +67,13 @@ public class Main2 {
     }
     
     public static void main(String[] args) {
-        new Main2(args);
-        
-        
+        new Main2(args);               
     }
     
-    
+    /**
+     * 
+     * @param sarchivo 
+     */
     private void recuperaConexiones(String sarchivo){
         try {
             FileReader mifr = new FileReader(sarchivo);

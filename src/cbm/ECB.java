@@ -77,4 +77,6 @@ public class ECB implements ClipboardOwner, FlavorListener{
         Logger.getLogger(ECB.class.getName()).log(Level.INFO, null, clipboard);
         System.out.println("Se perdio la propiedad del CB");
     }
+    
+    
 }
