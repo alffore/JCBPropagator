@@ -4,7 +4,7 @@ package jcbpropagator;
 
 
 
-import cbm.ClipboardListener;
+import cbm.*;
 import cbm.MemoriaC;
 import cliente.ConexionCliente;
 import cliente.SimpleCliente;
@@ -47,10 +47,10 @@ public class Main2 {
         
         
         
-        //new ECB(alconex,almem);
+        new ECB(alconex,almem);
         
-        ClipboardListener listener = new ClipboardListener();
-        listener.start();
+//        ClipboardListener listener = new ClipboardListener();
+//        listener.start();
         
         
         SimpleCliente sc = new SimpleCliente("http://127.0.0.1:8000/in");

@@ -19,7 +19,7 @@ public class SimpleCliente {
     //private int ultimo_ide; 
     HttpClient cliente;
 
-    String surl;
+    public String surl;
 
     /**
      *

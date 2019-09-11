@@ -19,7 +19,7 @@ public class ProcesaHandler implements HttpHandler {
 
     @Override
     public void handle(HttpExchange t) throws IOException {
-        String response = "This is the response " + id;
+        String response = " " + id;
         t.sendResponseHeaders(200, response.length());
         try (OutputStream os = t.getResponseBody()) {
             os.write(response.getBytes());
