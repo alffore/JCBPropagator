@@ -56,7 +56,7 @@ public class Main2 {
         SimpleCliente sc = new SimpleCliente("http://127.0.0.1:8000/in");
         for(int i=0; i<10000;i++){
                                     
-                sc.eviaMensaje();
+                sc.eviaMensaje("");
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {

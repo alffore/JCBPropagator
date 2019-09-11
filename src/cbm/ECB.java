@@ -6,8 +6,8 @@ package cbm;
 import cliente.*;
 import java.awt.Toolkit;
 import java.awt.datatransfer.*;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.logging.*;
 
 
@@ -49,8 +49,8 @@ public class ECB implements ClipboardOwner, FlavorListener{
      */
     @Override
     public void flavorsChanged(FlavorEvent e) {
-        Logger.getLogger(ECB.class.getName()).log(Level.INFO, null, e);
-        System.out.println(Arrays.toString(((Clipboard)e.getSource()).getAvailableDataFlavors()));
+//        Logger.getLogger(ECB.class.getName()).log(Level.INFO, null, e);
+//        System.out.println(Arrays.toString(((Clipboard)e.getSource()).getAvailableDataFlavors()));
         this.recuperaObjetoCB();
     }
     
@@ -69,7 +69,16 @@ public class ECB implements ClipboardOwner, FlavorListener{
      * 
      */
     private void recuperaObjetoCB(){
-        
+        try {
+            
+            String scad=(String) cb.getData(DataFlavor.stringFlavor);
+            
+            for(var c: asc){
+                c.eviaMensaje(scad);
+            }
+            
+        } 
+        catch (UnsupportedFlavorException | IOException e) {}
     }
 
     @Override
